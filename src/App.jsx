@@ -18,12 +18,21 @@ const[readingTime, setReadingTime]= useState(0)
   setbookmarks(newBookmarks)
  }
 
- //markasread
- const handleMarkAsRead = time =>{
+ //markasread define korsi aikahney
+ const handleMarkAsRead = (id, time) =>{
   // console.log( 'faiza',time)
 
 const newReadingTime = readingTime+time;
 setReadingTime(newReadingTime)
+
+//remove the read blog from bookmark
+// console.log('remove' , id)
+
+const remainingBookmarks = bookmarks.filter(bookmark => bookmark.id !== id);
+setbookmarks(remainingBookmarks);
+
+
+
 
  }
   return (
