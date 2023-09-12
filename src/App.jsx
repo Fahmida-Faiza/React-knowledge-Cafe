@@ -1,18 +1,27 @@
 
+import { useEffect, useState } from 'react'
 import './App.css'
 import Blogs from './components/Blogs/Blogs'
 import Bookmarks from './components/Bookmarks/Bookmarks'
 import Header from './components/Header/Header'
 
 function App() {
-
+  // step1:
+const [bookmarks, setbookmarks] =useState([]); 
+//step2:
+ const handleAddToBookmark = blog =>{
+  console.log('bookmark adding soon')
+ }
 
   return (
     <>
       
      <Header></Header>
-     <div className='md:flex'>
-      <Blogs></Blogs>
+     <div className='md:flex max-w-3xl mx-auto'>
+      {/* step3: handleAddToBookmark={handleAddToBookmark} */}
+      <Blogs handleAddToBookmark={handleAddToBookmark}></Blogs>
+
+      {/*  */}
       <Bookmarks></Bookmarks>
      </div>
       
